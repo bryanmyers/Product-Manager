@@ -1,0 +1,13 @@
+main {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto
+}
+
+input, label {
+  display: block
+}
+
+label, button {
+  margin-top: 20px;
+}
