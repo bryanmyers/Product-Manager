@@ -16,8 +16,9 @@ const ProductList = (props) => {
   }, []
   )
 
-  const productList = products.map((product, index) => <li key={index}><Link to={`/api/product/${product._id}`}>{product.title}</Link></li>)
+  const productList = products.map((product, index) => <li key={index}><Link to={`/api/product/${product._id}`}>{`${product.title}, ID: ${product._id}`}</Link></li>)
 
+  console.log(products)
   return (
     <>
       <h2>Product List</h2>

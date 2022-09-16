@@ -15,7 +15,7 @@ const routes = (app) => {
 
   //Update
 
-  app.put('/api/product/:id', PersonController.update)
+  app.put('/api/product/edit/:id', PersonController.update)
 
   //Delete
 

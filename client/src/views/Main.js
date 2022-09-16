@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import ProductForm from '../components/ProductForm'
 import ProductList from '../components/ProductList'
 import ProductOne from '../components/ProductOne'
+import ProductUpdate from '../components/ProductUpdate'
 
 const Main = (props) => {
 
@@ -20,7 +20,8 @@ const Main = (props) => {
             </>
             } 
           />
-          <Route path='api/product/:id' element={<ProductOne />}/>
+          <Route path='/api/product/edit/:id' element={<ProductUpdate />} />
+          <Route path='/api/product/:id' element={<ProductOne />}/>
         </Routes>
       </BrowserRouter>
     </>

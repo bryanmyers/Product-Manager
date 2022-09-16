@@ -21,6 +21,7 @@ const ProductOne = (props) => {
       <h3>{productOne.title}</h3>
       <p>Price: ${productOne.price}</p>
       <p>Description: {productOne.desc}</p>
+      <Link to={`/api/product/edit/${id}`}>Edit</Link>
       <Link to='/api/product'>Return to List</Link>
     </>
   )
