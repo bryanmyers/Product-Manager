@@ -1,26 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const ProductOne = (props) => {
 
   const path = document.location.pathname
   const id = path.substring(path.lastIndexOf('/') +1)
+
+  const [productOne, setProductOne] = useState({})
   
   useEffect( () => {
-    console.log(id)
-    axios.get(`/api/product/${id}`)
-    .then(res => (console.log(res.data)))
+    axios.get(`http://localhost:8000/api/product/${id}`)
+    .then(res => setProductOne(res.data))
     .catch(err => console.log(`ProductOne Get One caught an error ${err}`))
   })
-  //const product = axios find one
 
   return (
     <>
-    <h2>Product Details</h2>
-      <h3>product.title</h3>
-      <p>product.price</p>
-      <p>product.description</p>
-      <a href="/api/product">Return to List</a>
+      <h2>Product Details</h2>
+      <h3>{productOne.title}</h3>
+      <p>Price: ${productOne.price}</p>
+      <p>Description: {productOne.desc}</p>
+      <Link to='/api/product'>Return to List</Link>
     </>
   )
 }

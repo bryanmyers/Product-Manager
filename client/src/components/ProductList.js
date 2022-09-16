@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import styles from '../static/ProductList.module.css'
+import { Link } from 'react-router-dom'
 
 const ProductList = (props) => {
 
@@ -15,13 +16,13 @@ const ProductList = (props) => {
   }, []
   )
 
-  const productList = products.map((product, index) => <li key={index}><a href={`/api/product/${product._id}`}>{product.title}</a></li>)
+  const productList = products.map((product, index) => <li key={index}><Link to={`/api/product/${product._id}`}>{product.title}</Link></li>)
 
   return (
     <>
       <h2>Product List</h2>
       <ul>
-          {productList}
+        {productList}
       </ul>
     </>
 

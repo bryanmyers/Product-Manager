@@ -27,7 +27,7 @@ const ProductController = {
   findOne: (req, res) => {
     Product.find({_id: req.params.id})
     .then((product) => {
-      res.json(product)
+      res.json(product[0])
     })
     .catch((err) => {
       res.json({message: `ProductController.findOne Caught an error: ` ,error:err})
