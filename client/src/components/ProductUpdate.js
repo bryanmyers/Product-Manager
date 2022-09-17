@@ -38,10 +38,9 @@ const ProductUpdate = () => {
     }
 
     axios.put(`http://localhost:8000/api/product/edit/${id}`, updatedProduct)
-    .then(res => {
-      console.log(res)
-      navigate('/api/product/')
-    })
+
+    .then(navigate('/api/product/'))
+    
     .catch(err => console.log(`ProductUpdate Put caught an error: ${err}`))
   }
 

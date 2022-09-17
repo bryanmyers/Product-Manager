@@ -20,7 +20,7 @@ const Main = (props) => {
             </>
             } 
           />
-          <Route path='/api/product/edit/:id' element={<ProductUpdate />} />
+          <Route path='/api/product/edit/:id' element={<ProductUpdate products={products} setProducts={setProducts} />} />
           <Route path='/api/product/:id' element={<ProductOne />}/>
         </Routes>
       </BrowserRouter>

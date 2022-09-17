@@ -49,7 +49,7 @@ const ProductController = {
   //Destroy
 
     delete: (req, res) => {
-      Product.deleteOne(req.params.id)
+      Product.deleteOne({_id: req.params.id})
         .then((deletedProduct) => {
           res.json(deletedProduct)
         })

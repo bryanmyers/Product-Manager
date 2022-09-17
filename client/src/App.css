@@ -4,6 +4,11 @@ main {
   margin-inline: auto
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0
+}
+
 input, label {
   display: block
 }
@@ -17,6 +22,7 @@ hr {
   margin-bottom: 50px
 }
 
-a {
-  display: block
+button {
+  display: inline-block;
+  margin-right: 20px
 }
